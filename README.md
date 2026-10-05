@@ -3,7 +3,7 @@
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 [![Python 3.12](https://img.shields.io/badge/python-3.12-blue.svg)](https://www.python.org/)
 
-Code, data and results for the IEEE TPS 2026 paper *Topology-Preserving Obfuscation of Network Configurations for LLM Analysis* by Giannis Tziakouris and Nadhem Al-Fardan.
+Code, data and results for the IEEE TPS 2026 paper *Topology-Preserving Obfuscation of Network Configurations for LLM Analysis* by Giannis Tziakouris and Nadhem AlFardan.
 
 Network operators increasingly want to ask large language models about their router configurations, but those configurations contain addresses, ASNs, customer names and credentials that cannot leave the organization. Masking each value independently breaks the references between configurations, and consistent pseudonyms still destroy the subnet relationships that define the topology.
 
@@ -132,7 +132,7 @@ Only successful calls count as done, so an interrupted run resumes where it stop
 
 ```bibtex
 @inproceedings{tziakouris2026obfuscation,
-  author    = {Tziakouris, Giannis and Al-Fardan, Nadhem},
+  author    = {Tziakouris, Giannis and AlFardan, Nadhem},
   title     = {Topology-Preserving Obfuscation of Network Configurations for {LLM} Analysis},
   booktitle = {Proc. IEEE TPS},
   year      = {2026}
