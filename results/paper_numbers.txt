@@ -1,0 +1,28 @@
+======================================================================
+CURRENT DATASET: 215 usable observations
+  original         54/54
+  naive            53/54
+  global_pseudo    54/54
+  full             54/54
+  ALL 216 COMPLETE: False
+======================================================================
+
+--- SETUP SENTENCE ---
+The study comprises 216 planned observations across six bundles, three tasks, three models, and four conditions. The final dataset contains 215 unique usable observations: the original and full-pipeline conditions are complete with 54 each, while global pseudonymization contains 54 and naive masking contains 53. Missing baseline observations were unavailable due to provider quota limits, and failed calls are excluded rather than scored zero.
+
+--- PAIRED-DELTA TABLE ROWS ---
+			Naive masking & 53 & \(-1.32\) & \([-1.57,-1.07]\)\\
+			Global pseudonymization & 54 & \(-0.13\) & \([-0.30,+0.04]\)\\
+			Full pipeline & 54 & \(+0.07\) & \([-0.11,+0.26]\)\\
+
+--- IDENTIFIER ACCURACY + UNSUPPORTED OUTPUT ---
+The full pipeline attains an identifier-accuracy score of \(1.81\) on the \(0\)--\(2\) scale, compared with \(1.69\) for the original configurations, \(1.69\) for global pseudonymization and \(0.83\) for naive masking. Responses containing at least one unsupported claim or identifier pair occur in 7\% of the original responses, 7\% of the full-pipeline responses, 11\% of the global-pseudonymization responses and 57\% of the naive-masking responses.
+
+--- FORMAT COMPLIANCE ---
+Of the 215 scored observations, 186 follow the requested structured-output format.
+
+--- INVARIANTS (cross-check; should be stable) ---
+  full: 54 pairs, mean +0.074, CI [-0.11,+0.26]
+  Nemotron-3-Super-120B    full +0.33 (18 pairs)
+  Gemini-3.6-Flash         full +0.00 (18 pairs)
+  Llama-3.3-70B            full -0.11 (18 pairs)

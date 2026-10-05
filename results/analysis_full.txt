@@ -1,0 +1,41 @@
+========================================================================
+LLM UTILITY EXPERIMENT - FINAL ANALYSIS
+========================================================================
+usable observations : 215 / 216
+excluded            : 540
+  reasons           : {'ExcludedCallFailed': 534, 'ExcludedTargetMisalignment': 6}
+by model            : {'Gemini-3.6-Flash': 71, 'Nemotron-3-Super-120B': 72, 'Llama-3.3-70B': 72}
+
+MEAN CORRECTNESS (0-2), n in brackets, * = THIN (n<6)
+method                    T1 fault           T2 refs           T3 topo
+original                 1.22[18]          2.00[18]          1.61[18] 
+naive                    0.50[18]          0.00[18]          0.35[17] 
+global_pseudo            1.06[18]          2.00[18]          1.39[18] 
+full                     1.33[18]          2.00[18]          1.72[18] 
+
+POOLED BY METHOD
+  original         n= 54 correctness=1.61 ident_acc=1.69 hallucination=7%
+  naive            n= 53 correctness=0.28 ident_acc=0.83 hallucination=57%
+  global_pseudo    n= 54 correctness=1.48 ident_acc=1.69 hallucination=11%
+  full             n= 54 correctness=1.69 ident_acc=1.81 hallucination=7%
+
+PAIRED DELTA vs ORIGINAL (same bundle+task+model in both arms)
+  naive            pairs= 53 mean_delta=-1.32 identical_to_original=11/53 (21%)
+  global_pseudo    pairs= 54 mean_delta=-0.13 identical_to_original=40/54 (74%)
+  full             pairs= 54 mean_delta=+0.07 identical_to_original=43/54 (80%)
+
+PAIRED DELTA vs ORIGINAL, per task, method=full
+  T1 fault     pairs= 18 mean_delta=+0.11
+  T2 refs      pairs= 18 mean_delta=+0.00
+  T3 topo      pairs= 18 mean_delta=+0.11
+
+RETURN-PATH GATE ON FULL-PIPELINE MODEL PROSE
+  full-pipeline responses      : 54
+  responses with identifiers   : 53
+  recall, all identifier classes: 0.800
+  recall, excluding bare numerics: 1.000
+  responses with perfect non-numeric recall: 53/53
+  false positives on released output: 0
+
+format-compliant responses: 186 / 215
+

@@ -1,0 +1,32 @@
+[
+  {
+    "approach": "naive",
+    "parse_unknown_lines": 0,
+    "refs_total": 198,
+    "refs_ok": 50,
+    "adj_orig": 24,
+    "adj_kept": 0,
+    "isomorphic": false,
+    "leaked_values": 21
+  },
+  {
+    "approach": "addr-only",
+    "parse_unknown_lines": 0,
+    "refs_total": 198,
+    "refs_ok": 198,
+    "adj_orig": 24,
+    "adj_kept": 24,
+    "isomorphic": true,
+    "leaked_values": 188
+  },
+  {
+    "approach": "ours",
+    "parse_unknown_lines": 0,
+    "refs_total": 198,
+    "refs_ok": 198,
+    "adj_orig": 24,
+    "adj_kept": 24,
+    "isomorphic": true,
+    "leaked_values": 0
+  }
+]

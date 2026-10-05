@@ -1,0 +1,52 @@
+{
+  "table2": [
+    {
+      "condition": "Original",
+      "resolved_refs": "198/198",
+      "preserved_adjacencies": "24/24",
+      "isomorphic": true,
+      "residual_strings": 311
+    },
+    {
+      "condition": "Naive masking",
+      "resolved_refs": "50/198",
+      "preserved_adjacencies": "0/24",
+      "isomorphic": false,
+      "residual_strings": 21
+    },
+    {
+      "condition": "Global pseudonymization",
+      "resolved_refs": "198/198",
+      "preserved_adjacencies": "0/24",
+      "isomorphic": false,
+      "residual_strings": 0
+    },
+    {
+      "condition": "Full pipeline",
+      "resolved_refs": "198/198",
+      "preserved_adjacencies": "24/24",
+      "isomorphic": true,
+      "residual_strings": 0
+    }
+  ],
+  "table4": [
+    {
+      "variant": "Full pipeline",
+      "isomorphic": true,
+      "divergent_subnets": 0,
+      "offset_errors": "0/48"
+    },
+    {
+      "variant": "No LCS elevation",
+      "isomorphic": false,
+      "divergent_subnets": 6,
+      "offset_errors": "0/48"
+    },
+    {
+      "variant": "No offset retention",
+      "isomorphic": false,
+      "divergent_subnets": 0,
+      "offset_errors": "22/48"
+    }
+  ]
+}

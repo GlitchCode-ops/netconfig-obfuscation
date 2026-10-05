@@ -1,0 +1,12 @@
+Table II: structural comparison (25-device workload)
+Condition                       Refs    Adj.   Iso  Residual
+Original                     198/198   24/24   Yes       311
+Naive masking                 50/198    0/24    No        21
+Global pseudonymization      198/198    0/24    No         0
+Full pipeline                198/198   24/24   Yes         0
+
+Table IV: ablation (25-device workload)
+Variant                  Iso  Divergent  Offset errors
+Full pipeline            Yes          0           0/48
+No LCS elevation          No          6           0/48
+No offset retention       No          0          22/48

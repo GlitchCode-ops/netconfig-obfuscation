@@ -1,0 +1,64 @@
+version 15.2
+hostname CORE_SITE_NKFKIS_1
+!
+enable secret 5 <REDACTED-SECRET-ENABLE-SECRET>
+username admin secret 5 <REDACTED-SECRET-USERNAME-ADMIN-SECRET>
+snmp-server community <REDACTED-SECRET-SNMP-COMMUNITY> RO
+crypto isakmp key <REDACTED-SECRET-ISAKMP-KEY> address 10.15.103.9
+!
+ip vrf VRF_PNIU5F
+ rd 65503:100
+ route-target export 65503:100
+ route-target import 65503:100
+!
+ip vrf VRF_2HHAJA
+ rd 65503:101
+ route-target export 65503:101
+ route-target import 65503:101
+!
+interface Loopback0
+ description mgmt loopback CORE_SITE_NKFKIS_1
+ ip address 10.101.204.151 255.255.255.255
+!
+interface GigabitEthernet0/1
+ description LINK LAN
+ ip vrf forwarding VRF_PNIU5F
+ ip address 10.77.16.1 255.255.255.0
+ ip access-group 186 in
+!
+interface GigabitEthernet0/2
+ description LINK LAN
+ ip vrf forwarding VRF_2HHAJA
+ ip address 10.178.51.1 255.255.255.0
+ ip access-group 160 in
+!
+interface TenGigabitEthernet1/1
+ description to CORE_SITE_AHH4NZ_1
+ ip address 10.15.103.10 255.255.255.252
+!
+access-list 186 permit ip 10.77.16.0 0.0.0.255 any
+access-list 186 deny ip any any log
+access-list 160 permit ip 10.178.51.0 0.0.0.255 any
+access-list 160 deny ip any any log
+!
+ip prefix-list PL_N6HN2I seq 5 permit 10.77.16.0/24
+ip prefix-list PL_TUKUMT seq 5 permit 10.178.51.0/24
+!
+route-map RM_3BMBWJ permit 10
+ match ip address prefix-list PL_N6HN2I
+ set local-preference 200
+!
+route-map RM_XUMJPA permit 10
+ match ip address prefix-list PL_TUKUMT
+ set local-preference 200
+!
+router ospf 100
+ router-id 10.101.204.151
+ network 10.15.103.8 0.0.0.3 area 0
+!
+router bgp 65503
+ bgp router-id 10.101.204.151
+ neighbor 10.15.103.9 remote-as 64572
+ neighbor 10.15.103.9 route-map RM_3BMBWJ in
+!
+end
